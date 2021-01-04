@@ -44,6 +44,9 @@ class CoolEditableVideo{
    */
   getOutputEditlySpec(outputPath, fast=false){
     return {
+      defaults : {
+        transition : null
+      },
       outPath : outputPath,
       width : this.width,
       height : this.height,

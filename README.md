@@ -7,11 +7,32 @@ make videos with ease via code !
 import CoolEditableVideo from "../src/coolEditableVideo.js";                                                                                                                                                       
 import VideoClip from "../src/clip/videoClip.js"
 import TextLayer from "../src/layers/text.js"
+import ImageLayer from "../src/layers/image.js"
 
-const video = new CoolEditableVideo(1000, 500, 60);
-const clip = new VideoClip(2).add(new TextLayer("Some epic text", {fillStyle: "white", font: "Yellowtail", size:100}));
-video.add(clip)
-const spec = video.getOutputEditlySpec()
+const video = new CoolEditableVideo(1000, 500, 20);
+const clip = ( 
+              new VideoClip(2)
+              .add(new ImageLayer("./thirst.jpeg", {
+                left: 10, 
+                top: 10, 
+                width: video.width - 20, 
+                height: video.height - 20, 
+              }))
+              );
+const clip2 = ( 
+                new VideoClip(5)
+                .add(new ImageLayer("./thirst.jpeg", {
+                  left: 10, 
+                  top: 10, 
+                  width: video.width - 20, 
+                  height: video.height - 20, 
+                }))
+               .add(new TextLayer("Of course this is the best library ever written", {fillStyle: "black", font: "Yellowtail", size:50}))
+               )
 
-video.renderOut("output.mp4")
+video.add(clip).add(clip2)
+video.renderOut("output.gif")
 ```
+
+![rendered gif]("./test/output.gif")
+
