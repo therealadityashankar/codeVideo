@@ -1,0 +1,9 @@
+{
+    "libs": [
+        "ecmascript",
+    ],
+    "plugins": {
+        "node": {},
+        "esmodules": {}
+    }
+}
