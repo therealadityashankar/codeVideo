@@ -34,5 +34,5 @@ video.add(clip).add(clip2)
 video.renderOut("output.gif")
 ```
 
-![rendered gif]("./test/output.gif")
+![rendered gif](/test/output.gif)
 
